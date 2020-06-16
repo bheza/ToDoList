@@ -115,7 +115,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
             return;
         }
         mEditText.setText(task.getDescription());
-        mEditnote.setText(task.getNotes());
+        mEditnote.setText(task.getNote());
         setPriorityInViews(task.getPriority());
 
     }
