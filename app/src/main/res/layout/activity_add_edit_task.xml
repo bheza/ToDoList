@@ -19,10 +19,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:hint="@string/edit_task_description"
+        android:hint="Title"
         android:paddingBottom="@dimen/activity_horizontal_margin" />
 
-    <!-- TextView and FrameLayout (which contains buttons) for Priority Selection -->
+    <!-- Text Boc For Description -->
+
+
     <TextView
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
@@ -73,10 +75,22 @@
 
     </RadioGroup>
 
+    <!-- TextView and FrameLayout (which contains buttons) for Priority Selection -->
+    <EditText
+        android:inputType="textMultiLine"
+        android:id="@+id/edit_description"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="start"
+        android:hint="Notes"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+
+
     <!-- Add button -->
     <Button
         android:id="@+id/saveButton"
         style="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginTop="500dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
