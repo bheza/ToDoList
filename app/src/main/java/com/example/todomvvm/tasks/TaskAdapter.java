@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.todomvvm.R;
 import com.example.todomvvm.database.TaskEntry;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
@@ -70,11 +72,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         // Determine the values of the wanted data
         TaskEntry taskEntry = mTaskEntries.get(position);
         String description = taskEntry.getDescription();
+        String note= taskEntry.getNote();
         int priority = taskEntry.getPriority();
         String updatedAt = dateFormat.format(taskEntry.getUpdatedAt());
 
         //Set values
         holder.taskDescriptionView.setText(description);
+        holder.tasknoteview.setText(note);
         holder.updatedAtView.setText(updatedAt);
 
         // Programmatically set the text and color for the priority TextView
@@ -144,6 +148,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         // Class variables for the task description and priority TextViews
         TextView taskDescriptionView;
         TextView updatedAtView;
+        TextView tasknoteview;
         TextView priorityView;
 
         /**
@@ -156,6 +161,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
             taskDescriptionView = itemView.findViewById(R.id.taskDescription);
             updatedAtView = itemView.findViewById(R.id.taskUpdatedAt);
+            tasknoteview = itemView.findViewById(R.id.editTextTasknote)
             priorityView = itemView.findViewById(R.id.priorityTextView);
             itemView.setOnClickListener(this);
         }
